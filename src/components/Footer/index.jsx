@@ -9,12 +9,12 @@ function Footer() {
         <a className="footer-link" href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer">
           Freepik
         </a>
-        &nbsp;desde&nbsp;
-        <a className="footer-link" href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">
+        &nbsp;desde
+        &nbsp;<a className="footer-link" href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">
           www.flaticon.com
         </a>
       </p>
-    </footer>
+    </footer>  
   );
 }
 

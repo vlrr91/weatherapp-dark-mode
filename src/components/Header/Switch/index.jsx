@@ -1,11 +1,21 @@
 import React from 'react';
 import './Switch.css';
 
-function Switch() {
+function Switch({ setDarkMode }) {
+
+  function handleChange(event) {
+    const checked = event.target.checked;
+    setDarkMode(checked);
+  }
+
   return (
     <div className="dark-mode">
       <p className="dark-mode-title">Modo Oscuro</p>
-      <input type="checkbox" className="checkbox" id="checkbox" />
+      <input
+        type="checkbox" 
+        className="checkbox" 
+        id="checkbox"
+        onChange={handleChange}/>
       <label className="switch" htmlFor="checkbox"></label>   
     </div>
   );

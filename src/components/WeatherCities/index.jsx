@@ -2,20 +2,20 @@ import React from 'react';
 import LocationSearch from './SearchCard';
 import WeatherCard from './WeatherCard';
 
-import './CitiesList.css';
+import './WeatherCities.css';
 
-function CitiesList() {
+function WeatherCities() {
   return (
     <main className="cities-container">
       <LocationSearch />
       <div className="cities-list">
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
+        <WeatherCard city={'bogota'}/>
+        <WeatherCard city={'oymyakon'}/>
+        <WeatherCard city={'barcelona'}/>
+        <WeatherCard city={'tokio'}/>
       </div>
     </main>
   );
 }
 
-export default CitiesList;
+export default WeatherCities;

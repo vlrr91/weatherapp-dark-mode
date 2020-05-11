@@ -12,6 +12,10 @@
   border: none;
   border-bottom: 1px solid var(--divider);
   color: var(--divider);
+  background-color: var(--baseBackground)
+}
+.search-input::placeholder {
+  color: var(--divider);
 }
 .search-input:focus {
   outline: none;
@@ -28,11 +32,13 @@
 .search-input  {
   height: 40px;
 }
+@media screen and (min-width: 670px) {
+  .search-input {
+    font-size: 1rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   .search-form {
     margin: 2rem auto;
-  }
-  .search-input {
-    font-size: 1rem;
   }
 }

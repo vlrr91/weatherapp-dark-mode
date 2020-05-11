@@ -17,5 +17,27 @@
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
+}
+.app {
   background-color: var(--baseBackground);
+  min-height: 100vh;
+  padding-bottom: 1.5rem;
+}
+.is-light-mode {
+  --divider: #5f616d;
+  --cardGray: #f0f3fa;
+  --text: #6f717e;
+  --baseBackground: white;
+  --baseColor: #1d2029;
+  --switchSpinner: white;
+  --switch: #5f616d;
+}
+.is-dark-mode {
+  --cardGray: #252b43;
+  --baseBackground: #1d2029;
+  --baseColor: white;
+  --divider: #8088ad;
+  --text: #8088ad;
+  --switchSpinner: #282943;
+  --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
 }
