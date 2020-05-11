@@ -1,0 +1,30 @@
+.header {
+  padding: 2rem 1.5rem 0;
+}
+.header-title {
+  color: var(--baseColor);
+  margin: 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--divider);
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--divider);
+    margin: 0 1.5rem;
+    padding: 2rem 0;
+  }
+  .header-title {
+    border: none;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .header {
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,29 @@
+.cities-container {
+  position: relative;
+}
+.cities-list {
+  padding: 0 1.5rem;
+}
+@media screen and (min-width: 670px) {
+  .cities-list {
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    max-width: 816px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cities-list {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1232px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .cities-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 1350px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
