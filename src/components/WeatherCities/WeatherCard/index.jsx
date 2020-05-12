@@ -6,7 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 import './WeatherCard.css';
 
 function buildUrl(search) {
-  const baseUrl = 'http://api.openweathermap.org/data/2.5/weather';
+  const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
   const apiKey = process.env.REACT_APP_WEATHER_API;
   return `${baseUrl}?q=${search}&appId=${apiKey}&units=metric`;
 }
