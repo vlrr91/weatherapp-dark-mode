@@ -17,7 +17,7 @@ function getImageWeatherState(stateCode, night) {
     else return 'images/clouds.svg'
 }
 
-function WeatherCard({ city }) {
+function WeatherCard({ city, darkMode }) {
   const [data] = useFetch(buildUrl(city), {});
 
   function buildUrl(search) {
@@ -26,13 +26,17 @@ function WeatherCard({ city }) {
     return `${baseUrl}?q=${search}&appId=${apiKey}&units=metric`;
   }
 
-  function renderCard(cityData) {
+  function render(cityData) {
     if (cityData.name) {
       const { humidity, temp } = cityData.main;
       const wind = cityData.wind.speed;
       const name = cityData.name;
       const { id: stateCode, icon: night } = cityData.weather[0];
       const urlImage = getImageWeatherState(stateCode, night);
+
+      const humidityImage = darkMode ? 'images/humidity-n.svg' : 'images/humidity.svg';
+      const temperatureImage = darkMode ? 'images/temperature-n.svg' : 'images/temperature.svg';
+      const windImage = darkMode ? 'images/wind-n.svg' : 'images/wind.svg';
 
       return (
         <div className="card">
@@ -42,17 +46,17 @@ function WeatherCard({ city }) {
           <div className="card-info">
             <p className="info-temperature">
               <span>{Math.round(temp)}</span>
-              <img src="images/temperature.svg" alt="" />
+              <img src={temperatureImage} alt="" />
             </p>
             <img className="card-img" src={urlImage} alt="" />
             <div className="card-info-extra">
               <p className="info-humidity">
-                <img className="humidity-logo" src="images/humidity.svg" alt="" />
+                <img className="humidity-logo" src={humidityImage} alt="" />
                 {humidity}%
             </p>
               <p className="info-wind">
-                <img className="wind-logo" src="images/wind.svg" alt="" />
-                {wind} m/s
+                <img className="wind-logo" src={windImage} alt="" />
+                {wind.toFixed(1)} m/s
             </p>
             </div>
           </div>
@@ -74,7 +78,7 @@ function WeatherCard({ city }) {
 
   }
 
-  return renderCard(data);
+  return render(data);
 }
 
 export default WeatherCard;

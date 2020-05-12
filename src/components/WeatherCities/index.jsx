@@ -23,7 +23,7 @@ const defaultCities = [
   }
 ];
 
-function WeatherCities() {
+function WeatherCities({ darkMode }) {
   const [cities, setCities] = useState(defaultCities);
 
   function addCity(city) {
@@ -36,7 +36,11 @@ function WeatherCities() {
       <SearchLocation addCity={addCity} />
       <div className="cities-list">
         {cities.map(city => 
-          <WeatherCard key={city.id} city={city.name} />
+          <WeatherCard 
+            key={city.id} 
+            city={city.name}
+            darkMode={darkMode}
+          />
         )}
       </div>
     </main>

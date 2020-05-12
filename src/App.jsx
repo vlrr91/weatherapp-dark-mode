@@ -14,7 +14,7 @@ function App() {
       <Header>
         <Switch setDarkMode={setDarkMode}/>
       </Header>
-      <WeatherCities />
+      <WeatherCities darkMode={darkMode} />
       <Footer />
     </div>
   );

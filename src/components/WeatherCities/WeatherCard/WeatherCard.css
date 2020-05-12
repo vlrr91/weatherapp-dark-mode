@@ -75,13 +75,14 @@
 }
 .info-humidity {
   align-self: flex-end;
+  margin-bottom: 5px;
 }
 .info-wind {
   align-self: flex-start;
 }
 .humidity-logo,
 .wind-logo {
-  width: 1.1rem;
+  width: 1.3rem;
   margin-right: 5px;
 }
 @media screen and (min-width: 670px) {
