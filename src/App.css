@@ -41,3 +41,14 @@ body {
   --switchSpinner: #282943;
   --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cardGray: #252b43;
+    --baseBackground: #1d2029;
+    --baseColor: white;
+    --divider: #8088ad;
+    --text: #8088ad;
+    --switchSpinner: #282943;
+    --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
+  }
+}

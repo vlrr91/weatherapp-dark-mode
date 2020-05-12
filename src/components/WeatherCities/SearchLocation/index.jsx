@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import './SearchLocation.css';
 
 function SearchLocation({ addCity }) {
-  const searchInput = useRef();
+  const searchInput = useRef(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
   function handleSubmit(event) {

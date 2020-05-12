@@ -1,9 +1,20 @@
 import React from 'react';
-import './WeatherCard.css';
 
+// Hook
 import useFetch from '../../../hooks/useFetch';
 
-function getImageWeatherState(stateCode, night) {
+import './WeatherCard.css';
+
+function buildUrl(search) {
+  const baseUrl = 'http://api.openweathermap.org/data/2.5/weather';
+  const apiKey = process.env.REACT_APP_WEATHER_API;
+  return `${baseUrl}?q=${search}&appId=${apiKey}&units=metric`;
+}
+
+function WeatherCard({ city, darkMode }) {
+  const [data] = useFetch(buildUrl(city), {});
+
+  function getImageWeatherState(stateCode, night) {
     if (stateCode < 300) return 'images/storm.svg';
     else if (stateCode < 400) return 'images/drizzle.svg';
     else if (stateCode < 600) return 'images/rain.svg';
@@ -15,25 +26,18 @@ function getImageWeatherState(stateCode, night) {
       return 'images/sun.svg';
     }  
     else return 'images/clouds.svg'
-}
-
-function WeatherCard({ city, darkMode }) {
-  const [data] = useFetch(buildUrl(city), {});
-
-  function buildUrl(search) {
-    const baseUrl = 'http://api.openweathermap.org/data/2.5/weather';
-    const apiKey = process.env.REACT_APP_WEATHER_API;
-    return `${baseUrl}?q=${search}&appId=${apiKey}&units=metric`;
   }
 
   function render(cityData) {
     if (cityData.name) {
+      // Weather data
       const { humidity, temp } = cityData.main;
       const wind = cityData.wind.speed;
       const name = cityData.name;
       const { id: stateCode, icon: night } = cityData.weather[0];
       const urlImage = getImageWeatherState(stateCode, night);
 
+      // Images for dark mode
       const humidityImage = darkMode ? 'images/humidity-n.svg' : 'images/humidity.svg';
       const temperatureImage = darkMode ? 'images/temperature-n.svg' : 'images/temperature.svg';
       const windImage = darkMode ? 'images/wind-n.svg' : 'images/wind.svg';
@@ -75,7 +79,6 @@ function WeatherCard({ city, darkMode }) {
         </div>
       );
     }
-
   }
 
   return render(data);
