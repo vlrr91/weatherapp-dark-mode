@@ -22,6 +22,14 @@
   line-height: 1;
   text-transform: uppercase;
 }
+.card-message {
+    color: var(--baseColor);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: .5rem 0 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 .card-info {
   display: grid;
   grid-template-columns: 1fr 55px 1fr;

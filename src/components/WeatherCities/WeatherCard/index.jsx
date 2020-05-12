@@ -61,7 +61,7 @@ function WeatherCard({ city }) {
     } else if(cityData.cod === "404")  {
       return (
         <div className="card">
-          <h3 className="card-title">Ciudad no encontrada</h3>
+          <p className="card-message">Ciudad no encontrada: <span>{city}</span></p>
         </div>
       );
     } else {
@@ -75,7 +75,6 @@ function WeatherCard({ city }) {
   }
 
   return renderCard(data);
-
 }
 
 export default WeatherCard;

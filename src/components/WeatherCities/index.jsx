@@ -1,18 +1,43 @@
-import React from 'react';
-import LocationSearch from './SearchCard';
+import React, { useState } from 'react';
+import SearchLocation from './SearchLocation';
 import WeatherCard from './WeatherCard';
 
 import './WeatherCities.css';
 
+const defaultCities = [
+  {
+    id: 0,
+    name: 'bogotá'
+  },
+  {
+    id: 1,
+    name: 'oymyakon'
+  },
+  {
+    id: 2,
+    name: 'barcelona',
+  },
+  {
+    id: 3,
+    name: 'tokio'
+  }
+];
+
 function WeatherCities() {
+  const [cities, setCities] = useState(defaultCities);
+
+  function addCity(city) {
+    const newCity = { id: cities.length, name: city }
+    setCities([newCity, ...cities]);
+  }
+
   return (
     <main className="cities-container">
-      <LocationSearch />
+      <SearchLocation addCity={addCity} />
       <div className="cities-list">
-        <WeatherCard city={'bogota'}/>
-        <WeatherCard city={'oymyakon'}/>
-        <WeatherCard city={'barcelona'}/>
-        <WeatherCard city={'tokio'}/>
+        {cities.map(city => 
+          <WeatherCard key={city.id} city={city.name} />
+        )}
       </div>
     </main>
   );

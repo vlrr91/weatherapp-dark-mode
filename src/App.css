@@ -5,7 +5,7 @@
 }
 :root {
   --limeGreen: hsl(163, 72%, 41%);
-  --brightRed: hsl(356, 69%, 56%);
+  --error: hsl(356, 69%, 56%);
   --divider: #5f616d;
   --cardGray: #f0f3fa;
   --text: #6f717e;
