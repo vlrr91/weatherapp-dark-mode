@@ -15,7 +15,7 @@ function App() {
   }
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-colors-scheme: dark)');
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
     mq.addListener(changeMode);
     setDarkMode(mq.matches);
 
